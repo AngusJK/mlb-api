@@ -1,0 +1,6 @@
+[
+  { "team": "Dodgers", "name": "Mookie Betts", "position": "Right Field" },
+  { "team": "Yankees", "name": "Aaron Judge", "position": "Right Field" },
+  { "team": "Angels", "name": "Mike Trout", "positioin": "Center Field" },
+  { "team": "Padres", "name": "Fernando Tatis, Jr.", "position":  "Short Stop"}
+]
