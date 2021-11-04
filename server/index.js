@@ -6,29 +6,28 @@ const app = express()
 
 
 
-const getPlayers = () => {
-  const apiKey = "cb2f338924cc4becafb984ba0862d3e4"
+// const getPlayers = () => {
+//   const apiKey = "cb2f338924cc4becafb984ba0862d3e4"
 
-  fetch('https://api.sportsdata.io/v3/mlb/scores/json/Players/TOR', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Ocp-Apim-Subscription-Key': `${apiKey}`,
-      'Access-Control-Allow-Origin': '*'
-    }
-  }).then(res => res.json())
-  .then(data => {
-    console.log(data)
-  }).catch((err) => {
-    console.log(err)
-  })
-}
+//   fetch('https://api.sportsdata.io/v3/mlb/scores/json/Players/TOR', {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Ocp-Apim-Subscription-Key': `${apiKey}`,
+//       'Access-Control-Allow-Origin': '*'
+//     }
+//   }).then(res => res.json())
+//   .then(data => {
+//     console.log(data)
+//   }).catch((err) => {
+//     console.log(err)
+//   })
+// }
 
 
-
-app.get('/api/players', (req, res) => {
-  getPlayers()
-  //res.json('Hello from the other side')
+const players = [{firstName: "Mario", lastName: "Puzo"}, {firstName: "Francis", lastName:"Coppola"}]
+app.get('/api', (req, res) => {
+  res.json({message: `Ola from the other side, ${players[0].firstName} ${players[0].lastName}.`})
 })
 
 app.listen(PORT, () => {
