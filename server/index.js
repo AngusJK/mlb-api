@@ -25,7 +25,7 @@ const app = express()
 // }
 
 
-const players = [{firstName: "Mario", lastName: "Puzo"}, {firstName: "Francis", lastName:"Coppola"}]
+const players = [{firstName: "Roostrick", lastName: "van Kollistrand"}, {firstName: "Francis", lastName:"Coppola"}]
 app.get('/api', (req, res) => {
   res.json({message: `Ola from the other side, ${players[0].firstName} ${players[0].lastName}.`})
 })
