@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './Header.js';
+import App from './App';
+import PlayerCards from './PlayerCards';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <App />
+    <PlayerCards />
   </React.StrictMode>,
   document.getElementById('root')
 );
