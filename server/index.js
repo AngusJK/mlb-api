@@ -1,37 +1,43 @@
 const express = require('express')
 const PORT = process.env.PORT || 3001
 const app = express()
+const cors = require('cors')
 
-// import fetch from "node-fetch"
-
-
+app.use(cors())
 
 // const getPlayers = () => {
-//   const apiKey = "cb2f338924cc4becafb984ba0862d3e4"
-
-//   fetch('https://api.sportsdata.io/v3/mlb/scores/json/Players/TOR', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Ocp-Apim-Subscription-Key': `${apiKey}`,
-//       'Access-Control-Allow-Origin': '*'
-//     }
-//   }).then(res => res.json())
-//   .then(data => {
-//     console.log(data)
-//   }).catch((err) => {
-//     console.log(err)
-//   })
+  
 // }
 
-
-const players = [{firstName: "Roostrick", lastName: "van Kollistrand"}, {firstName: "Francis", lastName:"Coppola"}]
 app.get('/api', (req, res) => {
-  res.json({message: `Ola from the other side, ${players[0].firstName} ${players[0].lastName}.`})
+  res.json({message: 'The express server is connected to the React interface'})
+  console.log('This is the express server at /api.')
 })
 
+
+// const players = [{firstName: "Roostrick", lastName: "van Kollistrand"}, {firstName: "Francis", lastName:"Coppola"}]
+// app.get('/api', async (req, res) => {
+  // const apiKey = "cb2f338924cc4becafb984ba0862d3e4"
+  
+  // await fetch('https://api.sportsdata.io/v3/mlb/scores/json/Players/TOR', {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     'Ocp-Apim-Subscription-Key': `${apiKey}`,
+  //     'Access-Control-Allow-Origin': '*'
+  //   }
+  // }).then(res => res.json())
+  // .then(data => {
+  //   console.log(data)
+  //   res.send({ message: data })
+  // }).catch((err) => {
+  //   console.log(err)
+  // })
+  //res.json({message: `here is the data:`})
+// })
+
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
+  console.log(`Express server listening on port ${PORT}...`)
 })
 
 
